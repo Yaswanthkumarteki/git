@@ -35,8 +35,6 @@ class Bank:
     def get_atm_card_number(self):
         return self.__ATM_card_number
     
-if __name__ == "__main__":
-    c1 = Bank()
-    print(c1.get_customer_details())
-    print(c1.user_name)
-    print(c1.account_number)
+# if __name__ == "__main__":
+#     c1 = Bank()
+    
