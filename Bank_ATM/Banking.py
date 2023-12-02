@@ -2,6 +2,7 @@ class Bank:
     branch_account_number = 1000000
     branch_ATM_card_number = 1000
 
+    #static method for creating user
     @staticmethod
     def create_user():
         user_name = input("Enter your name: ")
@@ -15,6 +16,7 @@ class Bank:
                 "city_name":city_name, 
                 "account_balance": account_balance}
 
+    #initializing the customer
     def __init__(self):
         Bank.branch_account_number += 1
         self.__account_number = Bank.branch_account_number
