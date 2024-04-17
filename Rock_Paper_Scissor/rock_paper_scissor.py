@@ -72,4 +72,6 @@ while userinput.lower()[0] == "y":
         userinput = input("Do you want to continue ? \nType Yes to continue, else type No \n")
     except Exception as exc:
         print(exc)
+else:
+    print("Sorry you have entered an invalid input")
 
