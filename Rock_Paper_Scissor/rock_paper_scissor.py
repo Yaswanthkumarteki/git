@@ -16,45 +16,60 @@ time.sleep(0.5)
 while userinput.lower()[0] == "y":
     choicedict = {1:"Rock", 2:"Paper", 3:"Scissor"}
     time.sleep(1)
-    userchoice = int(input(" Please select your choice \n1 -> Rock \n2 -> Paper \n3 -> Scissor \n"))
-    time.sleep(1)
-    print("You have selected", choicedict[userchoice])
-    time.sleep(1)
-    compchoice = randint(1,3)
-    print("Computer has selected ",choicedict[compchoice])
+    try:
+        try:
+            userchoice = int(input(" Please select your choice \n1 -> Rock \n2 -> Paper \n3 -> Scissor \n"))
+        except Exception:
+            raise Exception("Please enter valid input i.e, 1 or 2 or 3")
+        time.sleep(1)
+        try:
+            print("You have selected", choicedict[userchoice])
+        except Exception:
+            raise Exception("Please enter values 1 or 2 or 3")
+        time.sleep(1)
+        compchoice = randint(1,3)
+        print("Computer has selected ",choicedict[compchoice])
 
-    time.sleep(1)
+        time.sleep(1)
 
-    if userchoice==1:
-        if compchoice == 1:
-            print("It is Tie")
-        elif compchoice ==3:
-            print("\033[1;32;40m You Won....! \n")
-            print("\033[0;37;40m  \n")
-        else:
-            print("\033[1;31;40m You Lose....! \n")
-            print("\033[0;37;40m  \n")
-        
-    elif userchoice ==2:
-        if compchoice ==2:
-            print("It is Tie")
-        elif compchoice ==3:
-            print("\033[1;31;40m You Lose....! \n")
-            print("\033[0;37;40m  \n")
-        else:
-            print("\033[1;32;40m You Won....! \n")
-            print("\033[0;37;40m  \n")
-        
-    else:
-        if compchoice ==3:
-            print("It is Tie")
-        elif compchoice ==1:
-            print("\033[1;31;40m You Lose....! \n")
-            print("\033[0;37;40m  \n")
-        else:
-            print("\033[1;32;40m You Won....! \n")
-            print("\033[0;37;40m  \n")
-
-    time.sleep(1)
+        if userchoice==1:
+            if compchoice == 1:
+                print("It is Tie")
+            elif compchoice ==3:
+                print("\033[1;32;40m You Won....! \n")
+                print("\033[0;37;40m  \n")
+            else:
+                print("\033[1;31;40m You Lose....! \n")
+                print("\033[0;37;40m  \n")
             
-    userinput = input("Do you want to continue ? \nType Yes to continue, else type No \n")
+        elif userchoice ==2:
+            if compchoice ==2:
+                print("It is Tie")
+            elif compchoice ==3:
+                print("\033[1;31;40m You Lose....! \n")
+                print("\033[0;37;40m  \n")
+            else:
+                print("\033[1;32;40m You Won....! \n")
+                print("\033[0;37;40m  \n")
+            
+        elif userchoice ==3:
+            if compchoice ==3:
+                print("It is Tie")
+            elif compchoice ==1:
+                print("\033[1;31;40m You Lose....! \n")
+                print("\033[0;37;40m  \n")
+            else:
+                print("\033[1;32;40m You Won....! \n")
+                print("\033[0;37;40m  \n")
+
+        else:
+            print("Please enter correct input")
+
+        
+
+        time.sleep(1)
+                
+        userinput = input("Do you want to continue ? \nType Yes to continue, else type No \n")
+    except Exception as exc:
+        print(exc)
+
