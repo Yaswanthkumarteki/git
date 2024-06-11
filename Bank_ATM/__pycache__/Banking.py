@@ -3,7 +3,7 @@ class Bank:
 
     #static method for creating user
     @staticmethod
-    def create_user(account_number,atm_number = 00000):
+    def create_user(account_number,atm_number = 10000):
         user_name = input("Enter your name: ")
         mobile_number = input("Enter mobile number: ")
         branch_name = input("Enter branch name: ")
@@ -15,7 +15,7 @@ class Bank:
                 "city_name":city_name, 
                 "account_balance": 000000000000,
                 "atm_card_number":atm_number,
-                "pin": 0000}
+                "pin": '0000'}
 
 
     #initializing the customer

@@ -20,8 +20,12 @@ class ATM(Bank):
     def validate_set_PIN():
         try:
             try:
-                pin = int(input("please enter a 4 digits pin to set: "))
-                if len(str(pin)) != 4:
+                pin = input("please enter a 4 digits pin to set: ")
+                try:
+                    int(pin)
+                except Exception:
+                    raise Invalid_Input
+                if len(pin) != 4:
                     raise Invalid_Input
             except Exception:
                 raise Invalid_Input
@@ -37,8 +41,12 @@ class ATM(Bank):
     def validate_your_PIN(cls):
         try:
             try:
-                pin = int(input("please enter your current 4 digits pin: "))
-                if len(str(pin)) != 4:
+                pin = input("please enter your current 4 digits pin: ")
+                try:
+                    int(pin)
+                except Exception:
+                    raise Invalid_Input
+                if len(pin) != 4:
                     raise Invalid_Input
             except Exception:
                 raise Invalid_Input
