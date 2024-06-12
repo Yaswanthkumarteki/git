@@ -1,0 +1,9 @@
+.header {
+  background-color: whitesmoke;
+  position: sticky;
+  top: 0;
+  box-shadow: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
