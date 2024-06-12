@@ -1,0 +1,29 @@
+.header {
+  background-color: rgb(49, 47, 47);
+  position: fixed;
+  width: 1250px;
+  top: 0;
+  box-shadow: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  background: black;
+  background-color: rgb(88, 184, 168);
+  color: rgb(49, 47, 47);
+  border-radius: 10px;
+  cursor: pointer;
+  height: 40px;
+  font-weight: bold;
+}
+.intro {
+  height: 20px;
+  padding: 2px;
+  background-color: rgb(88, 184, 168);
+  color: rgb(49, 47, 47);
+  font-weight: bold;
+  position: fixed;
+  top: 125px;
+}
