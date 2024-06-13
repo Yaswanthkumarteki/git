@@ -1,0 +1,32 @@
+* {
+  background-color: greenyellow;
+}
+
+.boxes {
+  height: 200px;
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 25px;
+}
+.container {
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: greenyellow;
+  /* position: -webkit-sticky;
+  top: 0; */
+  /* width: 200px; */
+}
