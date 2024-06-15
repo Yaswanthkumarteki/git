@@ -15,9 +15,16 @@
             background-color: white;
             width: 1000px;
             height: 100px;
-            color: aliceblue;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+            font-size: larger;
           "
-        ></div>
+        >
+          This
+        </div>
         <img
           src="static/images/logo.jpg"
           alt="logo"
@@ -29,61 +36,139 @@
             background-color: black;
             width: 1000px;
             height: 100px;
-            color: aliceblue;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+            font-size: larger;
           "
-        ></div>
+        >
+          That
+        </div>
       </div>
     </header>
     <div class="container">
       <div class="boxes" style="background-color: black">
-        <div
-          style="
-            background-color: black;
-            color: white;
-            margin: 10px;
-            font-weight: bolder;
-            font-size: larger;
-          "
+        <div class="whiteonblack">CSV to Excel</div>
+        <form
+          action="{% url 'upload-csv' %}"
+          method="post"
+          enctype="multipart/form-data"
+          style="background-color: black"
+          accept="video/mp4,video/webm,video/ogg"
         >
-          CSV to Excel
-        </div>
-        <form action="" style="background-color: black" accept=".CSV">
-          <input type="file" style="background-color: black; color: white" />
+          {% csrf_token %}
+          <input
+            type="file"
+            name="file"
+            style="background-color: black; color: white"
+          />
+          <button
+            type="submit"
+            style="
+              background-color: white;
+              color: black;
+              cursor: pointer;
+              border-radius: 5px;
+            "
+          >
+            Upload
+          </button>
         </form>
       </div>
-      <div class="boxes" style="background-color: white">Excel to CSV</div>
-      <div class="boxes" style="background-color: white">PDF to Image</div>
-      <div class="boxes" style="background-color: black">
-        <div
-          style="
-            background-color: black;
-            color: white;
-            margin: 10px;
-            font-weight: bolder;
-            font-size: larger;
-          "
+      <div class="boxes" style="background-color: white">
+        <div class="blackonwhite">Excel to CSV</div>
+        <form
+          action="{% url 'upload-excel' %}"
+          method="post"
+          enctype="multipart/form-data"
+          style="background-color: white"
+          accept=".xlsx"
         >
-          PDF to Word
-        </div>
-        <form action="" style="background-color: black" accept=".PDF">
-          <input type="file" style="background-color: black; color: white" />
+          {% csrf_token %}
+
+          <input
+            type="file"
+            name="file"
+            style="background-color: white; color: black"
+          /><br />
+          Enter Sheet Name
+          <input type="text" name="sheet_name" id="sheet" />
+
+          <button
+            type="submit"
+            style="
+              background-color: white;
+              color: black;
+              cursor: pointer;
+              border-radius: 5px;
+            "
+          >
+            Upload
+          </button>
+        </form>
+      </div>
+      <div class="boxes" style="background-color: white">
+        <div class="blackonwhite">PDF to Word</div>
+        <form
+          action="{% url 'upload-pdf' %}"
+          method="post"
+          enctype="multipart/form-data"
+          style="background-color: white"
+          accept=".PDF"
+        >
+          {% csrf_token %}
+          <input
+            type="file"
+            name="file"
+            style="background-color: white; color: black"
+          />
+          <button
+            type="submit"
+            style="
+              background-color: white;
+              color: black;
+              cursor: pointer;
+              border-radius: 5px;
+            "
+          >
+            Upload
+          </button>
         </form>
       </div>
       <div class="boxes" style="background-color: black">
-        <div
-          style="
-            background-color: black;
-            color: white;
-            margin: 10px;
-            font-weight: bolder;
-            font-size: larger;
-          "
+        <div class="whiteonblack">Video to Audio</div>
+        <form
+          action="{% url 'upload-video' %}"
+          method="post"
+          enctype="multipart/form-data"
+          style="background-color: black"
+          accept="video/mp4,video/webm,video/ogg"
         >
-          Video to Audio
-        </div>
-        <form action="" style="background-color: black" accept=".Video">
-          <input type="file" style="background-color: black; color: white" />
+          {% csrf_token %}
+          <input
+            type="file"
+            name="file"
+            style="background-color: black; color: white"
+          />
+          <button
+            type="submit"
+            style="
+              background-color: white;
+              color: black;
+              cursor: pointer;
+              border-radius: 5px;
+            "
+          >
+            Upload
+          </button>
         </form>
+        {% if error%}
+        <div>{{status_message}}</div>
+        {% elif success%}
+        <div>{{status_message}}</div>
+        {% endif %}
       </div>
     </div>
   </body>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download</title>
+    <link rel="stylesheet" href="static/styles.css" />
+    <link rel="icon" href="static/images/logo.svg" />
+  </head>
+  <body>
+    <header style="position: sticky; top: 0">
+      <div class="header">
+        <div
+          style="
+            background-color: white;
+            width: 1000px;
+            height: 100px;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+            font-size: larger;
+          "
+        >
+          This
+        </div>
+        <img
+          src="static/images/logo.jpg"
+          alt="logo"
+          width="400px"
+          height="100px"
+        />
+        <div
+          style="
+            background-color: black;
+            width: 1000px;
+            height: 100px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+            font-size: larger;
+          "
+        >
+          That
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="boxes" style="background-color: black">
+        <div
+          style="
+            background-color: black;
+            color: white;
+            margin: 10px;
+            font-weight: bolder;
+            font-size: larger;
+          "
+        >
+          {{ module }}
+        </div>
+
+        {% if error%}
+        <div style="background-color: black; color: white">{{status_message}}</div> <br>
+        <a
+            href="{% url 'home' %}"
+            style=" color: white; background-color: black"
+            >Click here to go to home</a
+          >
+        {% elif success%}
+
+        {% if module == 'Video to Audio' %}
+        <div style="background-color: black; color: white">
+            {{status_message}} <br />
+            
+              <a
+                href="media/userfiles/{{file_name}}"
+                download="audio.mp3"
+                style="background-color: black; color: white"
+                 
+                "
+              >Click here to download File</a
+              >
+            
+            <br />
+            <a
+              href="{% url 'home' %}"
+              style=" color: white; background-color: black"
+              >Click here to go to home</a
+            >
+          </div>
+
+          {% elif module == 'CSV to Excel' %}
+          <div style="background-color: black; color: white">
+            {{status_message}} <br />
+            
+              <a
+                href="media/userfiles/{{file_name}}"
+                download="Excel.xlsx"
+                style="background-color: black; color: white"
+                 
+                "
+              >Click here to download File</a
+              >
+            
+            <br />
+            <a
+              href="{% url 'home' %}"
+              style=" color: white; background-color: black"
+              >Click here to go to home</a
+            >
+          </div>
+        
+          {% elif module == 'Excel to CSV' %}
+          <div style="background-color: black; color: white">
+            {{status_message}} <br />
+            
+              <a
+                href="media/userfiles/{{file_name}}"
+                download="csvfile.csv"
+                style="background-color: black; color: white"
+                 
+                "
+              >Click here to download File</a
+              >
+            
+            <br />
+            <a
+              href="{% url 'home' %}"
+              style=" color: white; background-color: black"
+              >Click here to go to home</a
+            >
+          </div>
+        
+        {% elif module == 'PDF to Word Doc' %}
+          <div style="background-color: black; color: white">
+            {{status_message}} <br />
+            
+              <a
+                href="media/userfiles/{{file_name}}"
+                download="worddoc.doc"
+                style="background-color: black; color: white"
+                 
+                "
+              >Click here to download File</a
+              >
+            
+            <br />
+            <a
+              href="{% url 'home' %}"
+              style=" color: white; background-color: black"
+              >Click here to go to home</a
+            >
+          </div>
+          {% endif %}
+        
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

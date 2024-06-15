@@ -30,3 +30,19 @@
   top: 0; */
   /* width: 200px; */
 }
+
+.whiteonblack {
+  background-color: black !important;
+  color: white !important;
+  margin: 10px;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.blackonwhite {
+  background-color: white !important;
+  color: black !important;
+  margin: 10px;
+  font-weight: bolder;
+  font-size: larger;
+}

@@ -17,8 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import *
+from fileupload.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home)
+    path('', home, name='home'),
+    path('upload-excel',uploadExcel, name='upload-excel'),
+    path('upload-csv',uploadCSV, name='upload-csv'),
+    path('upload-pdf',uploadPDF, name='upload-pdf'),
+    path('upload-video',uploadVideo, name='upload-video')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
