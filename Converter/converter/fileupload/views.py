@@ -135,7 +135,7 @@ def uploadPDF(request):
     # Create a new directory
     os.mkdir(directory)
     print(f"Directory '{directory}' has been created")
-    print('upload excel trigerred')
+    print('upload PDF trigerred')
 
     if request.method == "POST":
         print(request.POST)
